@@ -1,9 +1,10 @@
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Plus, Edit, Archive, Eye, FileText } from 'lucide-react';
+import { Plus, Edit, Archive, Eye } from 'lucide-react';
 
 export const SurveyList = () => {
   const [surveys, setSurveys] = useState([
@@ -31,7 +32,7 @@ export const SurveyList = () => {
               <CardTitle className="flex justify-between items-center">
                 {survey.title}
                 <div>
-                  {survey.status === 'active' && <Badge variant="success">Active</Badge>}
+                  {survey.status === 'active' && <Badge className="bg-green-500 text-white">Active</Badge>}
                   {survey.status === 'draft' && <Badge variant="secondary">Draft</Badge>}
                   {survey.status === 'closed' && <Badge variant="destructive">Closed</Badge>}
                 </div>
